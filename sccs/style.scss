@@ -1,0 +1,15 @@
+// 1. Sassモジュールの読み込み (@use)
+// -------------------------------------------------
+// 変数やMixin、各パーツのSassファイルを読み込みます。
+// @use は必ずファイルの最上部にまとめて記述します。
+@use 'variable';
+@use 'mixin';
+@use 'common';
+@use 'layout';
+@use 'components';
+@use 'sections';
+
+// 2. 外部CSSの読み込み (@import)
+// -------------------------------------------------
+// すべての @use ルールの後に、Google Fontsなどを読み込みます。
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');

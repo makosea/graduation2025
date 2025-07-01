@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROTFOLIO</title>
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@4.0.1/destyle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div id="loading-screen">
+    <div id="loading-tiles-container"></div>
+    <div id="loading-content">
+      <div id="loading-text"></div>
+      <img src="./img/logo1.png" alt="Portfolionoのロゴ" id="loading-logo">
+    </div>
+  </div>
+
+  <header class="header">
+    <h1><a href="#"><img src="./img/logo1.png" alt="Portfolionoのロゴ" class="header__logo"></a></h1>
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li class="nav-menu_link"><a href="#about">ABOUT</a></li>
+        <li class="nav-menu_link"><a href="#skills">SKILLS</a></li>
+        <li class="nav-menu_link"><a href="#works">WORKS</a></li>
+      </ul>
+      <a href="#contact-modal" class="btn btn--fill js-modal-open">
+        <i class="fa-regular fa-envelope"></i>
+        <p>CONTACT</p>
+      </a>
+    </nav>
+    <button class="hamburger-menu" id="js-hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero__background"></div>
+      <div class="hero-content">
+        <h2>あなたの想いを形に、医療の未来を創る</h2>
+        <p>WEB DESIGN</p>
+      </div>
+    </section>
+    <section id="introduction" class="introduction-section">
+      <div class="contents-container">
+
+        <h2>患者さんへ「<span class="accent1">伝わる</span>」<br class="br-sp">情報発信を</h2>
+        <p>医療現場で「<span class="p-accent">もっと分かりやすく伝えたい</span>」と感じることはありませんか？ 専門的な医療情報を患者さんに的確に届けることは、時に難しい課題です。</p>
+        <p>しかし、Webサイトを効果的に活用することで、この課題を解決し、患者さんとのより深い信頼関係を築くことができます。</p>
+
+        <h3>
+          <span class="marker-container">
+            Webサイトが担う情報発信の重要性
+            <span class="marker-line"></span>
+          </span>
+        </h3>
+
+        <ul>
+          <li class="intro-list-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="intro-list-item__text">
+              <strong>24時間365日アクセス可能:</strong>
+              <p>患者さんが「知りたい」と思った時に、いつでも正確な情報にアクセスできる環境を提供します。</p>
+            </div>
+          </li>
+
+          <li class="intro-list-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="intro-list-item__text">
+              <strong>視覚的理解の促進:</strong>
+              <p>口頭や文字だけでは伝わりにくい情報も、画像や動画、インフォグラフィックを用いることで、分かりやすく直感的に伝えることができます。</p>
+            </div>
+          </li>
+
+          <li class="intro-list-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="intro-list-item__text">
+              <strong>効率的な疑問解消:</strong>
+              <p>よくある質問（FAQ）を掲載することで、患者さんの疑問を事前に解消し、問い合わせ対応の負担を軽減します。</p>
+            </div>
+          </li>
+
+          <li class="intro-list-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="intro-list-item__text">
+              <strong>情報の迅速な更新:</strong>
+              <p>医療情報は常に最新であることが求められます。Webサイトなら、タイムリーに情報を更新・修正し、常に正確な情報を提供できます。</p>
+            </div>
+          </li>
+        </ul>
+
+        <p>Webサイトは、医療機関と患者さんの信頼を深め、安心を提供する重要なツールです。貴院のWebサイトを「<span
+            class="p-accent">かかりつけのWebサイト</span>」となるよう、ぜひこの機会に情報発信のあり方を見直してみませんか。</p>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <div class="contents-container">
+        <div class="about-header">
+          <h2>ABOUT</h2>
+          <p>医療現場の「<span class="p-accent">わかりにくい</span>」を「<span
+              class="p-accent">伝わる</span>」に。<br>医療従事者だからこそできる、患者と現場をつなぐ<span class="p-accent">Webデザイン</span>を。</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text js-fade-in-item fade-in-left">
+            <p>
+              医療現場で長年、診療放射線技師として勤務しているウミです。<br>患者様一人ひとりに安心して検査を受けていただけるよう、丁寧な対応を心がけています。また、医療チームの一員として、医師や看護師師、と協力しながら、日々の業務改善や環境整備にも積極的に取り組んでいます。
+            </p>
+            <p>
+              現在は、よりスムーズで正確な予約・検査管理の仕組みを導入するために、Webアプリ開発にも挑戦中です。現場のニーズを理解している立場から、使いやすく役立つシステムを形にしていけたらと思っています。<br>これからも、医療の質と患者様の満足度向上のために努力を重ねてまいります。どうぞよろしくお願いいたします。
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="./img/4.png" alt="メインイメージ" class="about-image__main js-fade-in-item fade-in-right">
+            <img src="./img/5.png" alt="サブイメージ" class="about-image__sub js-fade-in-item fade-in-right">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section gallery">
+      <div class="scroll-container">
+        <div class="image-wrapper">
+          <img src="./img/100.png" alt="画像1">
+          <img src="./img/200.png" alt="画像2">
+          <img src="./img/300.png" alt="画像3">
+          <img src="./img/400.png" alt="画像4">
+          <img src="./img/500.png" alt="画像5">
+          <img src="./img/600.png" alt="画像6">
+        </div>
+      </div>
+    </div>
+    <section id="skills" class="skills">
+      <div class="contents-container">
+        <div class="skills-header">
+          <h2>SKILLS</h2>
+          <p>「<span class="p-accent">医療従事者</span> × <span class="p-accent">Webエンジニア</span>」</p>
+        </div>
+        <div class="skills-content">
+          <div class="skill-item">
+            <h3>HTML + CSS</h3>
+            <p>Webページの基本構造とデザインを理解し、シンプルで見やすいUIを意識したコーディングを行っています。</p>
+          </div>
+          <div class="skill-item --right">
+            <h3>Python</h3>
+            <p>日常業務のルーチン作業やデータ処理を自動化するスクリプトを作成し、業務時間の短縮やミスの防止に活用しています。</p>
+          </div>
+          <div class="skill-item">
+            <h3>Django</h3>
+            <p>予約管理や情報共有を目的とした医療機関向けWebアプリを構築中です。データベースとの連携、ログイン認証機能なども実装しています。</p>
+          </div>
+          <div class="skill-item --right">
+            <h3>GAS</h3>
+            <p>GoogleスプレッドシートやGmailと連携した自動化ツールを構築し、メール送信やデータ処理などの業務効率化を実現しています。</p>
+          </div>
+        </div>
+        <div class="skills-story">
+          <h3 class="skills-story__title">「<span class="p-accent">二刀流</span>」の強み</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="timeline-content">
+                <h4>医療現場での気づき</h4>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon --problem">
+                <i class="fas fa-triangle-exclamation"></i>
+              </div>
+              <div class="timeline-content --right">
+                <h4>問題点</h4>
+                <p>更新に時間がかかる、予約が分かりづらい</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="timeline-content">
+                <h4>習得スキル</h4>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon --solution">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div class="timeline-content --right">
+                <h4>解決したこと</h4>
+                <p>個人予約増、スタッフの負担軽減</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="works" class="works">
+      <div class="contents-container">
+        <div class="works-header">
+          <h2>WORKS</h2>
+          <p>これまでの<span class="p-accent">制作実績</span>と<span class="p-accent">進行中のプロジェクト</span></p>
+        </div>
+        <div class="works-content">
+          <div class="work-item js-fade-in-item fade-in-up"> <img src="./img/1.jpg" alt="プログラムテンプレートのサムネイル">
+            <h3>【プログラムテンプレート】</h3>
+            <p>
+              2010年、ここが原点。<br>まだWeb制作が今ほど身近でなかった頃、FC2ブログテンプレート制作から私のWebづくりは始まりました。<br>当時は、自作のテンプレートを数点アップし、どなたでも使えるように公開していました。
+            </p>
+            <a href="#" class="work-item__button">
+              リンクへ <i class="fas fa-arrow-right"></i> </a>
+          </div>
+          <div class="work-item js-fade-in-item fade-in-up"> <img src="./img/2.jpg" alt="恵比寿診療所ホームページのサムネイル">
+            <h3>【健康診断ホームページ】</h3>
+            <p>
+              2024年、十数年ぶりに再び本格的にホームページ制作に取り組みました。<br>きっかけは、現場職場の健康診断ページの導線が分かり使いにくい（笑）、「これでは患者さんが迷ってしまう...」と感じたことでした。<br>現在はこのサイトを通じて、個人での健診申込件数が着実に増加しており、現場からも喜びの声をいただいています。
+            </p>
+            <a href="https://www.kenshin.clinic.or.jp/" target="_blank" class="work-item__button">
+              リンクへ <i class="fas fa-arrow-right"></i> </a>
+          </div>
+          <div class="work-item js-fade-in-item fade-in-up"> <img src="./img/3.jpg" alt="予約管理システムのサムネイル">
+            <h3>【予約管理システム】</h3>
+            <p>
+              DjangoにてWEBアプリ（予約管理情報管理）を制作中。（2025年6月現在）<br>現場の意見を反映したものとなっているため業務効率化が実現。<br>数時間要していた作業も数分で終わるシステムを実現しました。<br>また、ペーパーレス化にも大きく貢献する予定です。<br>2025年10月頃、本番環境に
+              移行予定。</p>
+            <a href="./movie/Record.mp4" class="work-item__button">
+              詳細へ <i class="fas fa-arrow-right"></i> </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-contact">
+        <p>ご相談・ご依頼・お見積もりなど、お気軽にお問い合わせください。<br>医療現場の課題に寄り添い、最適なWeb活用や業務効率化のご提案をいたします。</p>
+        <a href="#contact-modal" class="btn btn--fill js-modal-open">
+          <i class="fa-regular fa-envelope"></i>
+          <p>CONTACT</p>
+        </a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-follow">
+        <h3>follow me</h3>
+        <ul class="social-links">
+          <li><a href="#" class="social-link--x"><i class="fab fa-x-twitter"></i></a></li>
+          <li><a href="#" class="social-link--instagram"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-logo-area"> <img src="./img/logo1.png" alt="Portfolionoのロゴ" class="footer__logo">
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <ul class="footer-nav">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#works">WORKS</a></li>
+        </ul>
+        <a href="#" class="privacy-policy">プライバシーポリシー</a>
+        <small class="copyright">&copy;seaside</small>
+      </div>
+    </div>
+  </footer>
+
+  <div id="contact-modal" class="modal-wrapper">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close-button">&times;</button>
+      <h2>CONTACT</h2>
+      <p class="modal-description">ご相談・ご依頼などお気軽にご連絡ください。</p>
+
+      <div id="contact-form" class="form-container">
+        <div class="form-body">
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="user_name">
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="user_email">
+          </div>
+          <div class="form-group">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="user_message"></textarea>
+          </div>
+
+          <button type="button" class="btn btn--fill">
+            <p>送信する</p>
+          </button>
+        </div>
+
+        <div class="form-success-message">
+          <h3>送信完了</h3>
+          <p>お問い合わせいただきありがとうございます。<br>内容を確認の上、折り返しご連絡いたします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

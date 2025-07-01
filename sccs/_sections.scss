@@ -1,0 +1,741 @@
+@use 'variable' as *;
+@use 'mixin' as *;
+
+/* =================================================
+  Body Loading
+  ================================================= */
+body.loading {
+  overflow: hidden;
+}
+
+/* =================================================
+  Hero
+  ================================================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/main-1.png") center center no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    @include mq($breakpoint-sp) {
+      // ▼▼▼ 修正箇所 ▼▼▼
+      // 背景画像を右端から10%内側にずらす
+      background-position: 83% center;
+      // ▲▲▲ 修正ここまで ▲▲▲
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    color: $textColor2;
+    visibility: hidden;
+
+    h2 {
+      font-size: 56px;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      color: $textColor2;
+      font-family: $segoe;
+      font-weight: bold;
+
+      @include mq($breakpoint-sp) {
+        font-size: 32px;
+      }
+    }
+
+    p {
+      font-size: 1.8em;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      color: $textColor2;
+      font-family: $segoe;
+
+      @include mq($breakpoint-sp) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+/* =================================================
+  Introduction
+  ================================================= */
+.introduction-section {
+  padding: 80px 0 0;
+  background-color: $beseColor1;
+  color: $textColor3;
+
+  p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+
+    @include mq($breakpoint-sp) {
+      font-size: 14px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: $textColor1;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+
+    @include mq($breakpoint-sp) {
+      font-size: 20px;
+    }
+
+    .marker-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .marker-line {
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background-color: rgba($accentColor2, 0.4);
+      transform-origin: left;
+      transform: scaleX(0);
+      z-index: -1;
+    }
+  }
+
+  .br-sp {
+  display: none;
+
+  @include mq($breakpoint-sp) {
+    display: block;
+  }
+}
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    perspective: 1000px;
+
+    @include mq($breakpoint-sp) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .intro-list-item {
+    background-color: $beseColor2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(50% - 15px);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    @include mq($breakpoint-sp) {
+      flex-basis: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .fa-circle-check {
+      font-size: 20px;
+      color: $textColor1;
+      margin-top: 0.15em;
+    }
+
+    .intro-list-item__text {
+      flex: 1;
+    }
+
+    strong {
+      font-size: 20px;
+      color: $textColor1;
+      margin-bottom: 10px;
+      display: block;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+}
+
+/* =================================================
+   About
+   ================================================= */
+.about {
+  background-color: $beseColor2;
+  text-align: center;
+
+  .about-header {
+    margin-bottom: 60px;
+
+    p {
+      color: $textColor1;
+      line-height: 1.6;
+
+      @include mq($breakpoint-sp) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1120px;
+    margin: 0 auto;
+
+    @include mq() {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .about-text {
+      flex: 1;
+      text-align: left;
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: $textColor1;
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      @include mq() {
+        p {
+          font-size: 0.9em;
+          line-height: 1.8;
+        }
+      }
+    }
+
+    .about-image {
+      flex: 1;
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mq() {
+        height: auto;
+        width: 90%;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+
+      img {
+        position: absolute;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+        @include mq() {
+          transform: none !important;
+        }
+      }
+
+      .about-image__main {
+        position: relative;
+        width: 80%;
+        z-index: 2;
+        left: auto;
+        top: auto;
+        transform: translateX(10%);
+
+        @include mq() {
+          position: relative;
+          width: 100%;
+          z-index: 1;
+        }
+      }
+
+      .about-image__sub {
+        position: absolute;
+        width: 40%;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        transform: translate(-10%, 10%);
+
+        @include mq() {
+          width: 50%;
+          top: auto;
+          left: -5%;
+          bottom: -10%;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+/* =================================================
+   Skills
+   ================================================= */
+.skills {
+  background-color: $beseColor1;
+  text-align: center;
+
+  .skills-header {
+    margin-bottom: 60px;
+
+    p {
+      font-size: 16px;
+      color: $mainColor1;
+      line-height: 1.6;
+
+      @include mq($breakpoint-sp) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.skills-content {
+  max-width: 1120px;
+  margin: 0 auto 80px;
+
+  .skill-item {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 40px;
+    background-color: $beseColor2;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    min-height: 75px;
+
+    @include mq($breakpoint-sp) {
+      flex-direction: column;
+    }
+
+    h3 {
+      flex: 0 0 200px;
+      font-size: 20px;
+      font-weight: bold;
+      color: $beseColor2;
+      background-color: $mainColor1;
+      padding: 10px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      text-align: center;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      word-break: keep-all;
+      white-space: normal;
+
+      @include mq($breakpoint-sp) {
+        flex: auto;
+        border-radius: 10px 10px 0 0;
+        padding: 15px 10px;
+      }
+    }
+
+    p {
+      flex: 1;
+      font-size: 16px;
+      color: $textColor3;
+      text-align: left;
+      line-height: 1.7;
+      padding: 10px 40px;
+
+      @include mq($breakpoint-sp) {
+        padding: 20px 25px;
+      }
+    }
+
+    &.--right {
+      flex-direction: row-reverse;
+      background-color: $beseColor2;
+
+      @include mq($breakpoint-sp) {
+        flex-direction: column;
+      }
+
+      h3 {
+        border-radius: 0;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        @include mq($breakpoint-sp) {
+          border-radius: 10px 10px 0 0;
+        }
+      }
+
+      p {
+        text-align: right;
+        padding-left: 40px;
+        padding-right: 20px;
+
+        @include mq($breakpoint-sp) {
+          text-align: left;
+          padding: 20px 25px;
+        }
+      }
+    }
+  }
+}
+
+.skills-story {
+  margin-top: 80px;
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: $mainColor1;
+    margin-bottom: 40px;
+
+    @include mq($breakpoint-sp) {
+      font-size: 20px;
+    }
+
+  }
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: rgba($mainColor1, 0.2);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+  }
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+
+  &:nth-child(odd) {
+    left: 0;
+  }
+
+  &:nth-child(even) {
+    left: 50%;
+
+    .timeline-content {
+      text-align: left;
+
+      &::after {
+        left: -10px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent $beseColor2 transparent transparent;
+      }
+    }
+  }
+}
+
+.timeline-icon {
+  position: absolute;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $mainColor1;
+  color: $beseColor2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  z-index: 1;
+
+  .timeline-item:nth-child(odd) & {
+    right: -25px;
+  }
+
+  .timeline-item:nth-child(even) & {
+    left: -25px;
+  }
+
+  &.--problem {
+    background-color: $accentColor1;
+  }
+
+  &.--solution {
+    background-color: $accentColor2;
+    color: $mainColor1;
+  }
+}
+
+.timeline-content {
+  padding: 20px 30px;
+  background-color: $beseColor2;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: right;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+  }
+
+  .timeline-item:nth-child(odd) & {
+    &::after {
+      right: -10px;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent $beseColor2;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: $mainColor1;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    color: $textColor3;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+/* =================================================
+   Works
+   ================================================= */
+.works {
+  background-color: $beseColor2;
+  text-align: center;
+
+  .works-header {
+    margin-bottom: 60px;
+
+    p {
+      font-size: 16px;
+      color: $mainColor1;
+      line-height: 1.6;
+
+      @include mq($breakpoint-sp) {
+        font-size: 14px;
+      }
+
+    }
+  }
+
+  .works-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1120px;
+    margin: 0 auto;
+
+    @include mq($breakpoint-sp) {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .work-item {
+      background-color: $beseColor1;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: calc(33.333% - 27px);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      position: relative;
+      padding-bottom: 70px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      @include mq($breakpoint-sp) {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: bold;
+        color: $mainColor1;
+        margin: 20px 20px 10px;
+        text-align: center;
+
+        @include mq($breakpoint-sp) {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        color: $textColor3;
+        line-height: 1.7;
+        padding: 0 20px 20px;
+        flex-grow: 1;
+
+        @include mq($breakpoint-sp) {
+          font-size: 14px;
+        }
+
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      .work-item__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 5px;
+        background-color: $mainColor1;
+        color: $beseColor2;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        i {
+          font-size: 14px;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          background-color: lighten($mainColor1, 10%);
+          transform: translateY(-2px);
+
+          i {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =================================================
+   Timeline for Smartphone
+   ================================================= */
+@include mq($breakpoint-sp) {
+  .timeline {
+    // タイムラインの縦線を中央から左端に移動させます
+    &::after {
+      left: 25px; // アイコンの中心に線が来るように左からの位置を固定
+      margin-left: 0; // 中央寄せのためのマージンをリセット
+    }
+  }
+
+  .timeline-item {
+    width: 100%; // 各アイテムの幅を画面いっぱいに広げます
+    left: 0 !important; // PC用の左右振り分け指定を解除します
+    padding-left: 65px; // アイコンと縦線の分のスペースを確保します
+    padding-right: 15px; // 右側の余白を調整します
+
+    // PCで右側にあった偶数番目のアイテムも左側に揃えます
+    &:nth-child(even) {
+      .timeline-content {
+        text-align: left; // テキストを左揃えに統一します
+
+        // コンテンツの吹き出し（矢印）の向きを左向きに統一します
+        &::after {
+          left: -10px;
+          right: auto; // 右向きの指定を解除
+          border-width: 10px 0 10px 10px;
+          border-color: transparent transparent transparent $beseColor2;
+        }
+      }
+    }
+  }
+
+  .timeline-icon {
+    // アイコンの位置を常に左側の縦線の上に固定します
+    left: 0;
+    right: auto !important; // PC用の右側配置指定を解除
+
+    // 奇数・偶数番目どちらのアイコンも同じ位置に配置します
+    .timeline-item:nth-child(odd) &,
+    .timeline-item:nth-child(even) & {
+      left: 0;
+    }
+  }
+
+  .timeline-content {
+    // すべてのコンテンツを左揃えに統一します
+    text-align: left;
+  }
+}

@@ -1,0 +1,11 @@
+@use 'variable' as *;
+
+// メディアクエリ用のMixin
+// 使い方:
+// @include mq() { ... }          => 1024px以下のスタイル
+// @include mq($breakpoint-sp) { ... } => 768px以下のスタイル
+@mixin mq($breakpoint: $breakpoint-pc) {
+  @media screen and (max-width: #{$breakpoint}) {
+    @content;
+  }
+}

@@ -1,0 +1,72 @@
+@use 'variable' as *;
+@use 'mixin' as *;
+
+body {
+    color: $textColor1;
+    font-family: $sans, $segoe, serif;
+    overflow-x: hidden;
+    /* ★追加★ 横方向のスクロールを隠す */
+}
+
+// ▼▼▼ 追加 ▼▼▼
+// ハンバーガーメニュー表示時に背景を固定
+.no-scroll {
+    overflow: hidden;
+}
+// ▲▲▲ 追加ここまで ▲▲▲
+
+html {
+    overflow-x: hidden;
+    /* ★追加★ html要素にも念のため適用 */
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: $textColor1;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include mq($breakpoint-sp) {
+        font-size: 24px;
+    }
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+li {
+    list-style: none;
+}
+
+.contents-container {
+    max-width: 1440px;
+    padding: 180px 160px;
+    margin: 0 auto;
+    font-family: $sans;
+
+    @include mq($breakpoint-sp) {
+        width: 100%;
+        padding: 80px 20px;
+    }
+}
+
+/* =================================================
+   accent
+   ================================================= */
+.accent1 {
+    color: $accentColor1;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.p-accent {
+    color: $accentColor1;
+    font-weight: bold;
+    font-size: 1.2em;
+}

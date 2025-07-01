@@ -1,0 +1,388 @@
+@use 'variable' as *;
+@use 'mixin' as *; 
+
+/* =================================================
+  Header
+  ================================================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 90px;
+  padding: 0 40px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+
+  @include mq() {
+    height: 80px; 
+    padding: 0 20px;
+  }
+
+  &.header--scrolled {
+    background-color: rgba($beseColor2, 0.15); // 少し透明な白背景
+    -webkit-backdrop-filter: blur(10px); // 背景を10pxぼかす（Safari用）
+    backdrop-filter: blur(10px); // 背景を10pxぼかす
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); // わずかに影をつけて境界を明確に
+  }
+
+
+  &__logo {
+    width: 320px;
+    z-index: 30; 
+
+    @include mq($breakpoint-sp) {
+      width: 200px;
+    }
+  }
+
+  nav {
+    display: flex;
+    column-gap: 32px;
+    font-size: 24px;
+    font-weight: bold;
+
+    @include mq() {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba($beseColor2, 0.98); 
+      z-index: 20; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+
+      &.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .nav-menu a {
+      color: $textColor1;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $mainColor1;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      &:hover {
+        color: $accentColor2;
+        background-color: $mainColor1;
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  &-menu {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+    @include mq() {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}
+
+// ▼▼▼ ハンバーガーメニューのスタイルを新規追加 ▼▼▼
+.hamburger-menu {
+  display: none; // PCでは非表示
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 30; // navより手前
+
+  @include mq() { // 1024px以下で表示
+    display: block;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: $mainColor1;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    left: 7px; // (44px - 30px) / 2
+
+    &:nth-child(1) {
+      top: 10px;
+    }
+
+    &:nth-child(2) {
+      top: 20px;
+    }
+
+    &:nth-child(3) {
+      top: 30px;
+    }
+  }
+
+  // activeクラスがついた時のスタイル（×印）
+  &.is-active {
+    span {
+      background-color: $mainColor1;
+
+      &:nth-child(1) {
+        top: 20px;
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 20px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+// ▲▲▲ 追加ここまで ▲▲▲
+
+
+/* =================================================
+   Footer
+   ================================================= */
+.footer {
+  background-color: $beseColor2;
+  color: $textColor1;
+  padding: 0;
+  text-align: center;
+
+  .footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px 40px;
+    border-bottom: 1px solid rgba($textColor1, 0.2);
+
+
+    @include mq($breakpoint-sp) {
+      flex-direction: column;
+      padding: 40px 20px 20px;
+      gap: 30px;
+    }
+  }
+
+  .footer-contact {
+    flex: 1;
+    text-align: left;
+    padding-right: 40px;
+
+
+    @include mq($breakpoint-sp) {
+      padding-right: 0;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: $textColor1;
+    }
+
+    .btn {
+
+      @include mq($breakpoint-sp) {
+        margin: 0 auto;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 24px;
+        color: $textColor2;
+
+        &:hover {
+          color: $textColor1;
+        }
+      }
+    }
+  }
+
+  .footer-divider {
+    width: 1px;
+    background-color: rgba($textColor1, 0.2);
+    margin: 0;
+    align-self: stretch;
+
+    @include mq($breakpoint-sp) {
+      display: none;
+    }
+  }
+
+  .footer-follow {
+    flex: 1;
+    text-align: center;
+    padding: 50px 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 40px;
+
+    @include mq($breakpoint-sp) {
+      margin-left: 0;
+      padding: 0;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: $textColor1;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+
+      li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $beseColor2;
+        color: $textColor1;
+        font-size: 40px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &.social-link--x:hover {
+          background-color: #000000;
+          color: #ffffff;
+        }
+
+        &.social-link--instagram:hover {
+          background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .footer-logo-area {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+    text-align: center;
+    background-color: $beseColor2;
+  }
+
+  .footer__logo {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    background-color: $mainColor1;
+    color: $textColor2;
+
+    .footer-bottom-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 40px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+
+      @include mq($breakpoint-sp) {
+        gap: 20px;
+        flex-wrap: wrap; // 折り返しを許可
+      }
+
+      li a {
+        font-size: 20px;
+        font-weight: bold;
+        color: $textColor2;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $accentColor2;
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s ease-out;
+        }
+
+        &:hover {
+          color: $accentColor2;
+
+          &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+      }
+    }
+
+    .privacy-policy {
+      font-size: 16px;
+      color: $textColor2;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $accentColor2;
+      }
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: $accentColor2;
+    }
+  }
+}
