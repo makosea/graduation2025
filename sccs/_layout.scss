@@ -22,10 +22,10 @@
   }
 
   &.header--scrolled {
-    background-color: rgba($beseColor2, 0.15); // 少し透明な白背景
-    -webkit-backdrop-filter: blur(10px); // 背景を10pxぼかす（Safari用）
-    backdrop-filter: blur(10px); // 背景を10pxぼかす
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); // わずかに影をつけて境界を明確に
+    background-color: rgba($beseColor2, 0.15); 
+    -webkit-backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
   }
 
 
@@ -112,7 +112,7 @@
   }
 }
 
-// ▼▼▼ ハンバーガーメニューのスタイルを新規追加 ▼▼▼
+
 .hamburger-menu {
   display: none; // PCでは非表示
   position: relative;
@@ -121,9 +121,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 30; // navより手前
+  z-index: 30; 
 
-  @include mq() { // 1024px以下で表示
+  @include mq() { 
     display: block;
   }
 
@@ -135,7 +135,7 @@
     background-color: $mainColor1;
     border-radius: 2px;
     transition: all 0.4s ease;
-    left: 7px; // (44px - 30px) / 2
+    left: 7px; 
 
     &:nth-child(1) {
       top: 10px;
@@ -150,7 +150,7 @@
     }
   }
 
-  // activeクラスがついた時のスタイル（×印）
+
   &.is-active {
     span {
       background-color: $mainColor1;
@@ -171,7 +171,6 @@
     }
   }
 }
-// ▲▲▲ 追加ここまで ▲▲▲
 
 
 /* =================================================

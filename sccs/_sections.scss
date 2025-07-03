@@ -32,10 +32,7 @@ body.loading {
     z-index: -1;
 
     @include mq($breakpoint-sp) {
-      // ▼▼▼ 修正箇所 ▼▼▼
-      // 背景画像を右端から10%内側にずらす
       background-position: 83% center;
-      // ▲▲▲ 修正ここまで ▲▲▲
     }
   }
 
@@ -52,7 +49,7 @@ body.loading {
       margin-bottom: 15px;
       line-height: 1.2;
       color: $textColor2;
-      font-family: $segoe;
+      font-family: $serif;
       font-weight: bold;
 
       @include mq($breakpoint-sp) {
@@ -65,7 +62,7 @@ body.loading {
       font-weight: 300;
       letter-spacing: 1.5px;
       color: $textColor2;
-      font-family: $segoe;
+      font-family: $serif;
 
       @include mq($breakpoint-sp) {
         font-size: 20px;
@@ -693,28 +690,26 @@ body.loading {
    ================================================= */
 @include mq($breakpoint-sp) {
   .timeline {
-    // タイムラインの縦線を中央から左端に移動させます
     &::after {
-      left: 25px; // アイコンの中心に線が来るように左からの位置を固定
-      margin-left: 0; // 中央寄せのためのマージンをリセット
+      left: 25px; 
+      margin-left: 0; 
     }
   }
 
   .timeline-item {
-    width: 100%; // 各アイテムの幅を画面いっぱいに広げます
-    left: 0 !important; // PC用の左右振り分け指定を解除します
-    padding-left: 65px; // アイコンと縦線の分のスペースを確保します
-    padding-right: 15px; // 右側の余白を調整します
+    width: 100%; 
+    left: 0 !important; 
+    padding-right: 15px; 
 
-    // PCで右側にあった偶数番目のアイテムも左側に揃えます
+
     &:nth-child(even) {
       .timeline-content {
-        text-align: left; // テキストを左揃えに統一します
+        text-align: left; 
 
-        // コンテンツの吹き出し（矢印）の向きを左向きに統一します
+
         &::after {
           left: -10px;
-          right: auto; // 右向きの指定を解除
+          right: auto; 
           border-width: 10px 0 10px 10px;
           border-color: transparent transparent transparent $beseColor2;
         }
@@ -723,11 +718,9 @@ body.loading {
   }
 
   .timeline-icon {
-    // アイコンの位置を常に左側の縦線の上に固定します
     left: 0;
     right: auto !important; // PC用の右側配置指定を解除
 
-    // 奇数・偶数番目どちらのアイコンも同じ位置に配置します
     .timeline-item:nth-child(odd) &,
     .timeline-item:nth-child(even) & {
       left: 0;
@@ -735,7 +728,6 @@ body.loading {
   }
 
   .timeline-content {
-    // すべてのコンテンツを左揃えに統一します
     text-align: left;
   }
 }

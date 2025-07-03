@@ -3,21 +3,16 @@
 
 body {
     color: $textColor1;
-    font-family: $sans, $segoe, serif;
+    font-family: $sans, $serif, serif;
     overflow-x: hidden;
-    /* ★追加★ 横方向のスクロールを隠す */
 }
 
-// ▼▼▼ 追加 ▼▼▼
-// ハンバーガーメニュー表示時に背景を固定
 .no-scroll {
     overflow: hidden;
 }
-// ▲▲▲ 追加ここまで ▲▲▲
 
 html {
     overflow-x: hidden;
-    /* ★追加★ html要素にも念のため適用 */
 }
 
 h2 {

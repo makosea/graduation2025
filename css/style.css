@@ -1,10 +1,8 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 body {
   color: #1F286F;
-  font-family: "Noto sans jp", "Segoe UI", serif;
+  font-family: "Noto sans jp", "Noto Serif JP", serif;
   overflow-x: hidden;
-  /* ★追加★ 横方向のスクロールを隠す */
 }
 
 .no-scroll {
@@ -13,7 +11,6 @@ body {
 
 html {
   overflow-x: hidden;
-  /* ★追加★ html要素にも念のため適用 */
 }
 
 h2 {
@@ -651,7 +648,7 @@ li {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  font-family: "Noto sans jp", "Segoe UI", serif;
+  font-family: "Noto sans jp", serif;
 }
 .form-group textarea {
   height: 120px;
@@ -726,7 +723,7 @@ body.loading {
   margin-bottom: 15px;
   line-height: 1.2;
   color: #FFFFFF;
-  font-family: "Segoe UI";
+  font-family: "Noto Serif JP";
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
@@ -739,7 +736,7 @@ body.loading {
   font-weight: 300;
   letter-spacing: 1.5px;
   color: #FFFFFF;
-  font-family: "Segoe UI";
+  font-family: "Noto Serif JP";
 }
 @media screen and (max-width: 768px) {
   .hero .hero-content p {
@@ -1335,7 +1332,6 @@ body.loading {
   .timeline-item {
     width: 100%;
     left: 0 !important;
-    padding-left: 65px;
     padding-right: 15px;
   }
   .timeline-item:nth-child(even) .timeline-content {
